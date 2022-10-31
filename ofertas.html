@@ -1,0 +1,237 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <link rel="stylesheet" href="css/style.css">
+  <link rel="stylesheet" href="css/fuentes.css">
+  <link rel="icon" href="images/legion.ico">
+  <title>Legión Gaming</title>
+</head>
+<body>
+  <div id="contenedor">
+    <div id="barra">
+      <h1>Legión Gaming</h1>
+    </div>
+
+    <div id="cabeza">
+      <img src="images/gaming.jpg" style="height:220px">
+      <img src="images/keyb.jpg" style="height:220px">
+    </div>
+
+
+     <div id="intro">
+       <h1 id="astro">Bienvenidos a Legión Gaming</h1>
+
+       <p>En este sitio web encontrarás las mejores ofertas de videojuegos para pc
+       y consolas, cómo, por ejemplo, gta. v o tomb raider mostrando todos sus detalles y al mejor precio
+       del mercado que podrás encontrar.
+
+    </p>
+    <p>¡Sumérgete en el mundo gamer, vive la experiencia, machaca a tus oponentes
+    conquista ciudades, conviértete en héroe, se parte de la Legión!.
+<p>
+      <img src="images/sonic.jpg" style="height:300px">
+      &nbsp
+      <img src="images/bate1.jpg" style="height:230px">
+
+
+     </div>
+
+    <div id="juegos">
+      <div class="flecha">
+      <h2>Selecciona el juego</h2>
+      <img src="images/arrow.gif">
+    </div>
+
+
+      <div class="row">
+        <div class="box" data-val="caja1">
+          <img src="images/over.jpg" alt="Overwatch" id="over" title="Overwatch">
+        </div>
+        <div class="box" data-val="caja2">
+          <img src="images/quake.jpg" alt="Quake Champions" title="Quake Champions">
+        </div>
+        <div class="box" data-val="caja3">
+          <img src="images/tomb.jpg" alt="Rise of Tomb Raider" title="Rise of Tomb Raider">
+        </div>
+        <div class="box" data-val="caja4">
+          <img src="images/uncharted.jpg" alt="Uncharted 4" title="Uncharted 4">
+        </div>
+        <div class="box" data-val="caja5">
+          <img src="images/fifa.jpg" alt="Fifa 18" title="Fifa 18">
+        </div>
+        <div class="box" data-val="caja6">
+          <img src="images/gta v.jpg" alt="Grand Theft Auto V" title="GTA V">
+        </div>
+        <div class="box" data-val="caja7">
+          <img src="images/rayman.jpg" alt="Rayman Legends" title="Rayman Legends">
+        </div>
+
+        <div class="box" data-val="caja8">
+          <img src="images/bioshock.jpg" alt="Bioshock" title="Bioshock Infinite">
+        </div>
+
+
+      </div>
+
+      <div class="row">
+        <div class="box-resultado" id="resultado">
+          <div><strong>Título:</strong><span id="titulo"></span></div>
+          <div><strong>Precio:$</strong><span id="precio"></span><strong>.</strong></div>
+          <div><strong>Desarrollador:</strong><span id="marca"></span></div>
+          <div><strong>Plataformas:</strong><span id="plat"></span></div>
+          <br>
+          <div><span id="imagen"></span></div>
+
+
+        </div>
+      </div>
+
+
+
+    </div>
+
+
+
+    <div id="footer">
+      <img src="images/rog.png" style="height:100px">
+      <img src="images/lenovo.png" style="height:100px">
+      <img src="images/omen.png" style="height: 100px">
+      <img src="images/predator.png" style="height:100px">
+      <img src="images/intel.png" style="height:100px">
+      &nbsp
+      <img src="images/nvidia.jpg">
+      <img src="images/msi.jpg">
+
+    </div>
+
+
+  </div>
+
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+  <script>
+  $('.box').click(function(){
+    //resetear valores
+    $('#precio').html("");
+    $('#marca').html("");
+    $('#plat').html("")
+    $('#imagen').html("");
+    $('#titulo').html("");
+
+
+    if($(this).hasClass('box-active')){
+      $('.box').removeClass('box-active');
+      $(this).addClass('box-active');
+    }else{
+      $('.box').removeClass('box-active');
+      $(this).removeClass('box-active');
+    }
+    $(this).toggleClass('box-active');
+
+    if($(this).hasClass('box-active')){
+      $('.box-resultado').show();
+    }else{
+      $('.box-resultado').hide();
+
+
+    }
+
+
+
+    var nombre ="";
+    var precio= 0;
+    var marca ="";
+    var platf ="";
+    var foto ="";
+    var seleccionado = $('.box-active').attr('data-val');
+    switch(seleccionado){
+      case 'caja1':
+      nombre = ("Overwatch");
+      precio = 40990;
+      marca = ("<strong>Blizzard Entertertaiment.</strong>");
+      platf = ("Playstation 4, Xbox One, Microsoft Windows.");
+      foto = ("<img src=images/blizzard.jpg>");
+      break;
+      case 'caja2':
+      nombre = ("Quake Champions");
+      precio = 35990;
+      marca = ("<strong>Id Software.</strong>");
+      platf = ("Microsoft Windows.");
+      foto = ("<img src=images/idsoft1.png>");
+      break;
+      case 'caja3':
+      nombre = ("Rise of the Tomb Raider");
+      precio = 21990;
+      marca = ("<strong>Crystal Dynamics.</strong>");
+      platf = ("PlayStation 4, Xbox One, Xbox 360, Microsoft Windows.");
+      foto = ("<img src=images/Crystal.jpg>");
+      break;
+      case 'caja4':
+      nombre = ("Uncharted 4: A Thief's End");
+      precio = 39990;
+      marca = ("<strong>Naughty Dog.</strong>");
+      platf = ("PlayStation 4.");
+      foto = ("<img src=images/dog.png>");
+      break;
+      case 'caja5':
+      nombre = ("EA Sports Fifa 18");
+      precio = 47990;
+      marca = ("<strong>EA Games.</strong>");
+      platf = ("PlayStation 4, Xbox One, Xbox 360, Nintendo Switch, Microsoft Windows.");
+      foto = ("<img src=images/ea-games.gif style=height:100px>");
+      break;
+      case 'caja6':
+      nombre = ("Grand Theft Auto V");
+      precio = 32990;
+      marca = ("<strong>Rockstar Games.</strong>");
+      platf = ("PlayStation 4, PlayStation 3, Xbox One, Xbox 360, Microsoft Windows.")
+      foto = ("<img src=images/rockstar.png>");
+      break;
+      case 'caja7':
+      nombre = ("Rayman Legends");
+      precio = 15990;
+      marca = ("<strong>Ubisoft.</strong>");
+      platf = ("PlayStation 4, PlayStation 3, Xbox One, Xbox 360, Microsoft Windows.")
+      foto = ("<img src=images/ubisoft.png>");
+      break;
+      case 'caja8':
+      nombre = ("Bioshock Infinite");
+      precio = 14990;
+      marca = ("<strong>Irrational Games</strong>");
+      platf = ("PlayStation 4, Xbox 360, Xbox One, PlayStation 3, Microsoft Windows, GNU/Linux");
+      foto = ("<img src=images/irrational.png>");
+    }
+    $('#titulo').html(nombre);
+    $('#precio').html(precio);
+    $('#marca').html(marca);
+    $('#plat').html(platf);
+    $('#imagen').html(foto);
+
+
+
+
+
+
+  });
+
+
+
+
+
+
+  </script>
+
+
+
+
+
+
+
+
+
+
+
+    </body>
+    </html>
